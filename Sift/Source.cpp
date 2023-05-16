@@ -6,7 +6,7 @@ using namespace std;
 void main()
 {
 	setlocale(LC_ALL, "");
-//#define SHIFT_LEFT
+	//#define SHIFT_LEFT
 #ifdef SHIFT_LEFT
 	const int n = 10;
 	int arr[n] = { 0,1,2,3,4,5,6,7,8,9 };
@@ -38,7 +38,7 @@ void main()
 	}
 	cout << endl;
 #endif
-//#define SHIFT_RIGHT
+	//#define SHIFT_RIGHT
 #ifdef SHIFT_RIGHT
 	const int n = 10;
 	int arr[n] = { 0,1,2,3,4,5,6,7,8,9 };
@@ -63,4 +63,4 @@ void main()
 		cout << arr[i];
 	}
 #endif
-	
+}
