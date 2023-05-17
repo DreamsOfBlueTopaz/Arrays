@@ -48,8 +48,8 @@ void main()
 	cout << endl;
 #endif
 	
-//#define SORTING
-#ifdef SORTING
+#define SORTING_1
+#ifdef SORTING_1
 	const int n = 5;
 	int arr[n];
 	int minRand;
@@ -64,7 +64,7 @@ void main()
 
 	for (int i = 0; i <n; i++)//сортировка
 	{
-		for (int j = 0; j <n-(i+1); j++)
+		for (int j = 0; j <n-(i+1); j++)//но почему не работает на диапазоне от i+1 до n?
 		{
 			if (arr[j + 1] < arr[j])
 			{
@@ -81,34 +81,5 @@ void main()
 	}
 	cout << endl;
 #endif
-	const int n = 5;
-	int arr[n];
-	int minRand;
-	int maxRand;
-	cout << "Введите минимальное число: "; cin >> minRand;
-	cout << "Введите максимальное число: "; cin >> maxRand;
-	for (int i = 0; i < n; i++)
-	{
-		arr[i] = rand() % (maxRand - minRand) + minRand;
-	}
-
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = 0; j < n - (i + 1); j++)
-		{
-			if (arr[j + 1] < arr[j])
-			{
-				int buffer = arr[j+1];
-				arr[j + 1] = arr[j];
-				arr[j] = buffer;
-			}
-		}
-	}
-
-
-	for (int i = 0; i < n; i++)
-	{
-		cout << arr[i] << tab;
-	}
-	cout << endl;
+	
 }
