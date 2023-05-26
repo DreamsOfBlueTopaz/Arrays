@@ -6,8 +6,8 @@ void main()
 
 {
 	setlocale(LC_ALL, "");
-//#define LESSON
-#ifdef LESSON
+//#define SORTING_1
+#ifdef SORTING_1
 
 	const int n = 5;
 	int arr[n];
@@ -48,8 +48,8 @@ void main()
 	cout << endl;
 #endif
 	
-#define SORTING_1
-#ifdef SORTING_1
+//#define SORTING_2
+#ifdef SORTING_2
 	const int n = 5;
 	int arr[n];
 	int minRand;
@@ -81,5 +81,82 @@ void main()
 	}
 	cout << endl;
 #endif
-	
+//#define UNIQUE
+#ifdef UNIQUE
+	const int n = 7;
+	int arr[n];
+	int minRand = 70;
+	int maxRand = 80;
+	for (int i = 0; i < n; i++)
+	{
+		arr[i] = rand() % (maxRand - minRand) + minRand;         //задаем диапазон
+	}
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = i+1; j < n; j++)
+		{
+			if (arr[j] == arr[i])
+			{
+				arr[i] = rand() % (maxRand - minRand) + minRand; //запись нового рандомного числа в диапазоне
+
+				j = 0; i = 0;                                    //необходимо начать заново
+			}
+		}
+	}
+	for (int i = 0; i < n; i++)                                 //вывод массива
+	{
+		cout << arr[i] << tab;
+	}
+#endif
+#define REPEATS
+#ifdef REPEATS
+	const int n = 10;
+	int arr[n];
+	int minRand = 0;
+	int maxRand = 5;
+	for (int i = 0; i < n; i++) //диапазон
+	{
+		arr[i] = rand() % (maxRand - minRand) + minRand;
+	}
+	cout << "Массив случайных чисел: " << endl;
+	for (int i = 0; i < n; i++)//вывод массива
+	{
+		cout  << arr[i] << tab;
+	}
+	cout << endl;
+	for (int i = 0; i < n; i++)//сортировка при необходимости
+	{
+		for (int j = i + 1; j < n; j++)
+		{
+			int buffer = 0;
+			if (arr[i] > arr[j])
+			{
+				buffer = arr[i];
+				arr[i] = arr[j];
+				arr[j] = buffer;
+			}
+
+		}
+	}
+	for (int i = 0; i < n; i++)//вывод отсортированного масива
+	{
+		cout << arr[i] << tab;
+	}
+	cout << endl;
+
+	for (int i = 0; i < n; i++)//поиск дублей и их количества
+	{
+		for (int j = i+1; j < n; j++)
+		{
+			int counts = 0;    //считает повторы
+			if (arr[i]==arr[j])
+				{
+					counts++;
+					cout << endl << "Повторяющееся число: " << arr[i] << tab << "Количество повторов " << counts;
+					break;
+				}
+				
+		}
+	}
+#endif
 }
