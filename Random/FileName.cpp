@@ -143,19 +143,22 @@ void main()
 		cout << arr[i] << tab;
 	}
 	cout << endl;
-
 	for (int i = 0; i < n; i++)//поиск дублей и их количества
-	{
+	{int counts = 0;    //считает повторы
 		for (int j = i+1; j < n; j++)
 		{
-			int counts = 0;    //считает повторы
+			if (arr[i] == arr[j + 1])
+			{
+				counts++;
+				break;
+			}
 			if (arr[i]==arr[j])
-				{
-					counts++;
-					cout << endl << "Повторяющееся число: " << arr[i] << tab << "Количество повторов " << counts;
-					break;
-				}
-				
+			{
+				counts++;
+				cout << endl << "число  " << arr[i] << tab << "  повторяется  " << counts<<"  раз";
+				break;
+			}
+
 		}
 	}
 #endif
